@@ -10,7 +10,7 @@ It has a simple console interface, call `archiver - h` to find out more.
 
 File produced by archiver has the following format:
 1. 9 bits -- the size of an alphabet `SYMBOLS_COUNT`
-1. Block of data for building canonical codes 
+1. Block of data for restoring canonical codes 
 1. `SYMBOLS_COUNT` 9-bit values - alphabet symbols in order of their canonical codes
 1. The list of `MAX_SYMBOL_CODE_SIZE` 9-bit values, i-й (0-based indexing) element - is a number of symbols which codes have lengths equal to  `i+1`. `MAX_SYMBOL_CODE_SIZE` - the biggest lengths of a code among all symbols. Canonical codes go in the same order as in the previous parahraph. `MAX_SYMBOL_CODE_SIZE` is not clearly written in the file  as it can be restored from the previous data.
 1. Encoded file name
@@ -20,7 +20,7 @@ File produced by archiver has the following format:
 1. Encoded special symbol `ARCHIVE_END`.
 
 
-##Other information
+## Other information
 
 Encoding and decoding algorithms don't focus on files and work with steams.
 
