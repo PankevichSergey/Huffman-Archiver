@@ -2,7 +2,7 @@
 
  This archiver uses [Haffman Algorithm](https://en.wikipedia.org/wiki/Huffman_coding).
 
-It has a simple console interface, call `archiver - h` to find out more.
+It has a simple console interface, call `archiver -h` to find out more.
 
 
 ## Format of file
