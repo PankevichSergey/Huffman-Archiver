@@ -18,7 +18,7 @@ ArgumentsParser::ArgumentsParser(int argc, char** argv) {
         if (argc > 3) {
             throw std::invalid_argument("too many arguments");
         }
-    } else if (mode_argument == "-c" == 0) {
+    } else if (mode_argument == "-c") {
         mode = Mode::ARCHIVE;
         if (argc == 2) {
             throw std::invalid_argument("archive name is not provided");
@@ -26,7 +26,7 @@ ArgumentsParser::ArgumentsParser(int argc, char** argv) {
         if (argc == 3) {
             throw std::invalid_argument("files are not chosen");
         }
-    } else if (mode_argument == "-h" == 0) {
+    } else if (mode_argument == "-h") {
         mode = Mode::HELP;
         if (argc > 2) {
             throw std::invalid_argument("too many arguments");
