@@ -8,8 +8,8 @@
 
 class Code {
 public:
-    uint16_t code = 0;
-    uint16_t length = 0;
+    uint64_t code = 0;
+    uint8_t length = 0;
     void DeleteLast();
-    void AddLast(uint16_t bit);
+    void AddLast(uint64_t bit);
 };

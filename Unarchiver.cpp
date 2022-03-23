@@ -21,13 +21,18 @@ Trie::Canonic Unarchiver::ReadCanonic() {
 
 std::string Unarchiver::GetFileName(Trie& canonic_haffman_trie) {
     std::string file_name;
+    std::vector<int> turns;
+    auto pog = canonic_haffman_trie.GetCodesTable();
     while (true) {
-        canonic_haffman_trie.MoveState(reader_.Read1Bit());
+        turns.push_back(reader_.Read1Bit());
+        //canonic_haffman_trie.MoveState(reader_.Read1Bit());
+        canonic_haffman_trie.MoveState(turns.back());
         if (canonic_haffman_trie.ReachedTerminal()) {
             if (canonic_haffman_trie.GetStateValue() == FILENAME_END) {
                 break;
             }
             file_name += canonic_haffman_trie.GetStateValue();
+            turns.clear();
         }
     }
     return file_name;

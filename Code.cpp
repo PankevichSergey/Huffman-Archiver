@@ -4,7 +4,7 @@
 
 #include "Code.h"
 
-void Code::AddLast(uint16_t bit) {
+void Code::AddLast(uint64_t bit) {
     code += bit << length;
     ++length;
 }
